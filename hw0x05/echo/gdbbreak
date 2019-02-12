@@ -1,0 +1,7 @@
+b *0x400783
+
+# call   0x400600 <read@plt>
+b *0x4007c0
+
+# call   0x4005f0 <dprintf@plt>
+b *0x40077b

@@ -1,0 +1,12 @@
+-->"</title></xmp></style></script><script>alert()</script>
+
+{食材}                                      <script>alert()</script>
+<!--{食材}-->                               -->
+<a href="{食材}">haha</a>                   ">
+<title>{食材}</title>                       </title>
+<style>{食材}</style>                       </style>
+<script>`{食材}`</script>                   </script>
+<script>{食材}</script>                     </script>
+<script>/*{食材}*/</script>                 </script>
+<select><option>{食材}</option></select>    <script>alert()</script>
+<xmp>{食材}</xmp>                           </xmp>

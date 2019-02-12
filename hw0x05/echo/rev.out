@@ -1,0 +1,33 @@
+call {
+    while(true):
+        # edi = 0x0
+        # rsi = [rip+0x2008e5] = 6010a0 = buffer
+        # edx = 0x30 = 48
+        if read( 0, buffer, 48 ) <= 0:
+            break;
+
+        # rdi = [rip+0x200904] = 6010a0 = buffer
+        # rsi = [rip+0x11f]    = 4008b4 = "exit"
+        # edx = 0x4
+        if strncmp( buffer, "exit", 4 ) == 0:
+            break;
+
+        # edi = DWORD PTR [rip+0x2008a3] = 601010 = 2
+        # rsi = [rip+0x20092c] = 6010a0 = buffer
+        call {
+            dprintf( 2, buffer );
+        }
+}
+# rdi = [rip+0xca] = 4008b9 = "Leave your name:"
+puts( "Leave your name:" );
+
+# edi = 0x0
+# rsi = [rip+0x200860] = 601060 = name
+# edx = 0x30 = 48
+read( 0, name, 48 );
+
+# rdi = [rip+0xb2] = 4008ca = "Goodbye~ %s\n"
+# rsi = [rip+0x20084f] = 601060 = name
+printf( "Goodbye~ %s\n", name );
+
+return 0

